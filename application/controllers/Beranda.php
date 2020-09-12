@@ -18,6 +18,7 @@ class Beranda extends CI_Controller {
 			'meninggal' => $update['jumlah_meninggal'],
 			'sembuh' => $update['jumlah_sembuh'],
 			'dirawat' => $update['jumlah_dirawat'],
+			'tanggal' => $update['tanggal'] 
 		];
 
 		$covidProv = json_decode($this->curl->simple_get($this->API . 'prov.json'));
