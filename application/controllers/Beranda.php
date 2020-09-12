@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
-	public $API = 'https://data.covid19.go.id/public/api/update.json';
+class Beranda extends CI_Controller {
+	public $API = 'https://data.covid19.go.id/public/api/';
 
 	public function __construct()
 	{
@@ -11,7 +11,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$covid = json_decode($this->curl->simple_get($this->API));
+		$covid = json_decode($this->curl->simple_get($this->API . 'update.json'));
 		$update = (array) $covid->update->penambahan;
 		$data = [
 			'positif' => $update['jumlah_positif'],
@@ -20,11 +20,9 @@ class Home extends CI_Controller {
 			'dirawat' => $update['jumlah_dirawat'],
 		];
 
-		$this->load->view('home/index', $data);
-	}
+		$covidProv = json_decode($this->curl->simple_get($this->API . 'prov.json'));
+		$data['prov'] = (array) $covidProv->list_data;
 
-	public function detail()
-	{
-		$this->load->view('home/detail');
+		$this->load->view('home/index', $data);
 	}
 }

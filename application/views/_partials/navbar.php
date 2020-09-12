@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand d-flex justify-content-center align-items-center" href="#">
+        <a class="navbar-brand d-flex justify-content-center align-items-center" href="<?= base_url(); ?>">
             <img class="w-50" src="<?= base_url('assets/img/covid19-68.png'); ?>" alt="">
             <h5 class="ml-2">Covid-19</h5>
         </a>
@@ -8,17 +8,20 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ml-auto">
-                <a class="nav-link active" href="#">
-                    Home
-                    <span class="sr-only">
-                        (current)
-                    </span>
-                </a>
-                <a class="nav-link" href="#">
-                    Lapor
-                </a>
-            </div>
+            <ul class="navbar-nav ml-auto">      
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url(); ?>">Beranda<span class="sr-only">(current)</span></a>
+                  </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Lainnya
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="<?= base_url('deteksidini') ?>">Deteksi Dini</a>
+                        <a class="dropdown-item" href="#">Lapor Sigap</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
