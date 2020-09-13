@@ -11,7 +11,7 @@ class Beranda extends CI_Controller {
 
 	public function index()
 	{
-		$covid = json_decode($this->curl->simple_get($this->API . 'update.json'));
+		$covid = json_decode(file_get_contents($this->API . 'update.json'));
 		$update = (array) $covid->update->penambahan;
 		$data = [
 			'positif' => $update['jumlah_positif'],
@@ -21,7 +21,7 @@ class Beranda extends CI_Controller {
 			'tanggal' => $update['tanggal'] 
 		];
 
-		$covidProv = json_decode($this->curl->simple_get($this->API . 'prov.json'));
+		$covidProv = json_decode(file_get_contents($this->API . 'prov.json'));
 		$data['prov'] = (array) $covidProv->list_data;
 
 		$this->load->view('home/index', $data);
