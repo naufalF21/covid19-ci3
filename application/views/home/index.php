@@ -19,7 +19,8 @@
 						<div class="card bg-info text-white shadow" >
 						  	<div class="card-body">
 						    	<h5 class="card-title">Jumlah Positif</h5>
-						    	<p class="card-text font"><?= $positif; ?></p>
+						    	<p class="card-text mb-2 font"><?= $positif; ?></p>
+						    	<small class="font-weight-bold sub_font"><i>+<?= $harian['jumlah_positif']; ?></i></small>
 						  	</div>
 						</div>
 					</div>
@@ -27,7 +28,8 @@
 						<div class="card bg-danger text-white shadow" >
 						  	<div class="card-body">
 						    	<h5 class="card-title">Jumlah Meninggal</h5>
-						    	<p class="card-text font"><?= $meninggal; ?></p>
+						    	<p class="card-text font mb-2"><?= $meninggal; ?></p>
+						    	<small class="font-weight-bold sub_font"><i>+<?= $harian['jumlah_meninggal']; ?></i></small>
 						  	</div>
 						</div>
 					</div>
@@ -36,7 +38,8 @@
 						<div class="card bg-success text-white shadow" >
 						  	<div class="card-body">
 						    	<h5 class="card-title">Jumlah Sembuh</h5>
-						    	<p class="card-text font"><?= $sembuh; ?></p>
+						    	<p class="card-text font mb-2"><?= $sembuh; ?></p>
+						    	<small class="font-weight-bold sub_font"><i>+<?= $harian['jumlah_sembuh']; ?></i></small>
 						  	</div>
 						</div>
 					</div>
@@ -45,7 +48,8 @@
 						<div class="card bg-warning text-white shadow" >
 						  	<div class="card-body">
 						    	<h5 class="card-title">Jumlah Dirawat</h5>
-						    	<p class="card-text font"><?= $dirawat; ?></p>
+						    	<p class="card-text font mb-2"><?= $dirawat; ?></p>
+						    	<small class="font-weight-bold sub_font"><i>+<?= $harian['jumlah_dirawat']; ?></i></small>
 						  	</div>
 						</div>
 					</div>	
@@ -71,11 +75,11 @@
 						  	<?php foreach ($prov as $row_p): ?>
 						  		<tr>
 							      <th scope="row"><?= $i++; ?></th>
-							      <td><?= $row_p->key ?></td>
-							      <td><?= $row_p->jumlah_kasus ?></td>
-							      <td><?= $row_p->jumlah_sembuh ?></td>
-							      <td><?= $row_p->jumlah_meninggal ?></td>
-							      <td><?= $row_p->jumlah_dirawat ?></td>
+							      <td><?= $row_p['key'] ?></td>
+							      <td><?= $row_p['jumlah_kasus'] ?></td>
+							      <td><?= $row_p['jumlah_sembuh'] ?></td>
+							      <td><?= $row_p['jumlah_meninggal'] ?></td>
+							      <td><?= $row_p['jumlah_dirawat'] ?></td>
 							    </tr>
 						  	<?php endforeach ?>
 						    

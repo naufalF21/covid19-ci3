@@ -14,6 +14,10 @@
 	.font {
 		font-size: 2rem;
 	}
+
+	.sub_font {
+		font-size: 1rem;
+	}
 </style>
 
 
